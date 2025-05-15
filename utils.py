@@ -66,13 +66,12 @@ def _get_github_api_response(url, token=None):
 
 def get_github_latest_release(project):
     """Fetch and parse github release data and return the latest main release (not a draft or prerelease)."""
-    url = f"https://api.github.com/repos/{project['org']}/{project['repo']}/releases"
+    url = f"https://api.github.com/repos/{project['org']}/{project['repo']}/releases/latest"
 
     release_data = _get_github_api_response(url)
 
-    for release in release_data:
-        if not release["prerelease"] and not release["draft"]:
-            return release
+    if release_data and "tag_name" in release_data:
+        return release_data
 
     log.error(f"No latest release found for {project}!")
     return None
