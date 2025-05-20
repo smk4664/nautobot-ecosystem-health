@@ -51,9 +51,10 @@ jobs:
       # Save requests cache to artifacts
       - name: "Store requests cache"
         uses: actions/cache/save@v4
+        if: "steps.restore-cache.outputs.cache-hit != 'true'"
         with:
           path: ".cache"
-          key: "${{ steps.restore-cache.outputs.cache-primary-key }}"
+          key: "requests-cache"
       # Deploy to Pages
       - name: "Setup Pages"
         uses: "actions/configure-pages@v5"
