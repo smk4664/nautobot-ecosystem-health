@@ -48,11 +48,13 @@ jobs:
       - name: "Build static content"
         run: "poetry run python render.py"
       # Save requests cache to artifacts
+      - run: "ls -al"
       - name: "Store requests cache"
         uses: "actions/upload-artifact@v4"
         with:
           name: "requests-cache"
-          path: ".cache"
+          path: ".cache/"
+          if-no-files-found: "error"
       # Deploy to Pages
       - name: "Setup Pages"
         uses: "actions/configure-pages@v5"
