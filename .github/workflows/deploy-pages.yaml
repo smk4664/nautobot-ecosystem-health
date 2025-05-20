@@ -55,6 +55,7 @@ jobs:
           name: "requests-cache"
           path: ".cache/"
           if-no-files-found: "error"
+          include-hidden-files: true
       # Deploy to Pages
       - name: "Setup Pages"
         uses: "actions/configure-pages@v5"
