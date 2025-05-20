@@ -30,23 +30,29 @@ jobs:
     steps:
       - name: "Checkout"
         uses: "actions/checkout@v4"
-      - name: "Get Requests Cache"
-        id: cache
-        uses: "actions/cache@v4"
+      # Retrieve requests cache from artifacts
+      - name: "Retrieve requests cache"
+        uses: "actions/download-artifact@v4"
         with:
+          name: "requests-cache"
           path: ".cache"
-          key: "requests-cache"
       # Build HTML
       - name: "Set up Python"
         uses: "actions/setup-python@v5"
         with:
           python-version: "3.11"
-      - name: "Install Python Packages"
-        run: "pip install poetry"
+      - name: "Install Poetry"
+        run: "pipx install poetry"
       - name: "Install Dependencies"
         run: "poetry install --no-root"
       - name: "Build static content"
         run: "poetry run python render.py"
+      # Save requests cache to artifacts
+      - name: "Store requests cache"
+        uses: "actions/upload-artifact@v4"
+        with:
+          name: "requests-cache"
+          path: ".cache"
       # Deploy to Pages
       - name: "Setup Pages"
         uses: "actions/configure-pages@v5"
