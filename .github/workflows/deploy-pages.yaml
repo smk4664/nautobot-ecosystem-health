@@ -31,11 +31,11 @@ jobs:
       - name: "Checkout"
         uses: "actions/checkout@v4"
       # Retrieve requests cache from artifacts
-      # - name: "Retrieve requests cache"
-      #   uses: "actions/download-artifact@v4"
-      #   with:
-      #     name: "requests-cache"
-      #     path: ".cache"
+      - name: "Retrieve requests cache"
+        uses: "actions/download-artifact@v4"
+        with:
+          name: "requests-cache"
+          path: ".cache"
       # Build HTML
       - name: "Set up Python"
         uses: "actions/setup-python@v5"
@@ -48,7 +48,6 @@ jobs:
       - name: "Build static content"
         run: "poetry run python render.py"
       # Save requests cache to artifacts
-      - run: "ls -al"
       - name: "Store requests cache"
         uses: "actions/upload-artifact@v4"
         with:
