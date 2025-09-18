@@ -45,6 +45,7 @@ pages:
     - "pynautobot"
     - "nornir-nautobot"
     - "pylint-nautobot"
+    - "nautobot-ansible"
     - "nautobot"
   badges.ntc:
     - "pyntc"
