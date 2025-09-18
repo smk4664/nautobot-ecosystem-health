@@ -21,6 +21,7 @@ pages:
     - "nautobot-welcome-wizard"
     - "pynautobot"
     - "nornir-nautobot"
+    - "pylint-nautobot"
     - "nautobot"
   badges.nautobot:
     - "nautobot-bgp-models"
@@ -43,6 +44,7 @@ pages:
     - "nautobot-welcome-wizard"
     - "pynautobot"
     - "nornir-nautobot"
+    - "pylint-nautobot"
     - "nautobot"
   badges.ntc:
     - "pyntc"
@@ -209,6 +211,12 @@ metadata:
     name: "Nornir Nautobot"
     rtd: "network-to-code-nornir-nautobot"
     pypi: "nornir-nautobot"
+  pylint-nautobot:
+    repo: "pylint-nautobot"
+    org: "nautobot"
+    name: "Pylint Nautobot"
+    rtd: "network-to-code-pylint-nautobot"
+    pypi: "pylint-nautobot"
   # NTC OTHER
   pyntc:
     repo: "pyntc"
