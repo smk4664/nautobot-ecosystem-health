@@ -46,11 +46,11 @@ def get_yaml_data(filename):
 #
 
 
-def _get_github_api_response(url, token=None):
+def _get_github_api_response(url):
     """Return data from GitHub JSON API."""
     headers = {"Accept": "application/vnd.github+json", "X-GitHub-Api-Version": "2022-11-28"}
-    if token:
-        headers["Authorization"] = f"Bearer {token}"
+    if os.getenv("GH_TOKEN") is not None:
+        headers["Authorization"] = f"Bearer {os.getenv('GH_TOKEN')}"
     resp = requests.get(url, headers=headers, timeout=10)
 
     if resp.ok:

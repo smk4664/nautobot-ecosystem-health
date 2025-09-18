@@ -27,6 +27,8 @@ jobs:
       name: "github-pages"
       url: "${{ steps.deployment.outputs.page_url }}"
     runs-on: "ubuntu-latest"
+    permissions:
+      actions: "read"
     steps:
       - name: "Checkout"
         uses: "actions/checkout@v4"
@@ -48,6 +50,8 @@ jobs:
         run: "poetry install --no-root"
       - name: "Build static content"
         run: "poetry run python render.py"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       # Save requests cache to artifacts
       - name: "Store requests cache"
         uses: actions/cache/save@v4
