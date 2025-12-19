@@ -23,7 +23,7 @@
     <nav class="navbar navbar-expand-md bg-body-tertiary">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
-                <i class="bi bi-activity text-danger"></i>
+                <span class="bi bi-activity text-danger"></span>
                 Nautobot Ecosystem Health
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
@@ -33,25 +33,25 @@
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav me-auto">
                     <a class="nav-link" href="index.html">
-                        <i class="bi bi-clock-history text-warning"></i>
+                        <span class="bi bi-clock-history text-warning"></span>
                         Status
                     </a>
                     <a class="nav-link active" href="badges-nautobot.html">
-                        <i class="bi bi-lightning-fill text-success"></i>
+                        <span class="bi bi-lightning-fill text-success"></span>
                         Nautobot Badges
                     </a>
                     <a class="nav-link" href="badges-ntc.html">
-                        <i class="bi bi-lightning-fill text-success"></i>
+                        <span class="bi bi-lightning-fill text-success"></span>
                         NTC Badges
                     </a>
                     <a class="nav-link" href="upstream.html">
-                        <i class="bi bi-arrow-repeat text-primary"></i>
+                        <span class="bi bi-arrow-repeat text-primary"></span>
                         Upstream Testing
                     </a>
                 </div>
                 <span class="navbar-text">
-                    <a class="nav-link" href="https://github.com/cmsirbu/nautobot-ecosystem-health"><i
-                            class="bi bi-github"></i></a>
+                    <a class="nav-link" href="https://github.com/cmsirbu/nautobot-ecosystem-health"><span
+                            class="bi bi-github"></span></a>
                 </span>
             </div>
         </div>
@@ -61,14 +61,14 @@
         <table class="table table-sm table-hover">
             <thead>
                 <tr>
-                    <th>App Name <i class="bi bi-github"></i></th>
+                    <th>App Name <span class="bi bi-github"></span></th>
                     {# <th>Upstream Testing <i class="bi bi-github"></i></th> #}
                     <th>PyPI Version</th>
                     <th>Commits Since</th>
                     <th>Release Date</th>
                     <th>Docs/develop</th>
                     <th>Docs/main</th>
-                    <th>Docs/ltm-1.6</th>
+                    <th>Docs/ltm-2.4</th>
                 </tr>
             </thead>
             <tbody class="table-striped table-group-divider">
@@ -104,7 +104,7 @@
                     </td>
                     <td>
                         <a href="https://readthedocs.com/projects/{{ meta['rtd'] }}/builds/"><img
-                                src="https://readthedocs.com/projects/{{ meta['rtd'] }}/badge/?version=ltm-1.6"></a>
+                                src="https://readthedocs.com/projects/{{ meta['rtd'] }}/badge/?version=ltm-2.4"></a>
                     </td>
                 </tr>
                 {% endfor %}

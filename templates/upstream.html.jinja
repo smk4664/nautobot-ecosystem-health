@@ -23,7 +23,7 @@
     <nav class="navbar navbar-expand-md bg-body-tertiary">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
-                <i class="bi bi-activity text-danger"></i>
+                <span class="bi bi-activity text-danger"></span>
                 Nautobot Ecosystem Health
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
@@ -33,24 +33,24 @@
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav me-auto">
                     <a class="nav-link" aria-current="page" href="index.html">
-                        <i class="bi bi-clock-history text-warning"></i>
+                        <span class="bi bi-clock-history text-warning"></span>
                         Status
                     </a>
                     <a class="nav-link" href="badges-nautobot.html">
-                        <i class="bi bi-lightning-fill text-success"></i>
+                        <span class="bi bi-lightning-fill text-success"></span>
                         Nautobot Badges
                     </a>
                     <a class="nav-link" href="badges-ntc.html">
-                        <i class="bi bi-lightning-fill text-success"></i>
+                        <span class="bi bi-lightning-fill text-success"></span>
                         NTC Badges
                     </a>
                     <a class="nav-link active" href="upstream.html">
-                        <i class="bi bi-arrow-repeat text-primary"></i>
+                        <span class="bi bi-arrow-repeat text-primary"></span>
                         Upstream Testing
                     </a>
                 </div>
                 <span class="navbar-text">
-                    <a class="nav-link" href="https://github.com/cmsirbu/nautobot-ecosystem-health"><i class="bi bi-github"></i></a>
+                    <a class="nav-link" href="https://github.com/cmsirbu/nautobot-ecosystem-health"><span class="bi bi-github"></span></a>
                 </span>
             </div>
         </div>
@@ -64,7 +64,7 @@
                     <th>develop</th>
                     <th>next</th>
                     <th>ltm-2.4</th>
-                    <th><i class="bi bi-clock-history"></i></th>
+                    <th><span class="bi bi-clock-history"></span></th>
                     <th>Workflow Run History (Last 30, Latest/Left to Oldest/Right)</th>
                 </tr>
             </thead>
@@ -82,7 +82,7 @@
                         {% for job in latest_run_jobs if 'develop' in job['name'] %}
                         <a href="{{ job['html_url'] }}" data-bs-toggle="tooltip" data-bs-title="{{ job['name'] }}"
                             class="link-underline-opacity-0 {{ 'link-success' if job['conclusion']=='success' else 'link-danger' }}">
-                            <i class="bi {{ 'bi-check-square-fill' if job['conclusion']=='success' else 'bi-x-square' }}"></i>
+                            <span class="bi {{ 'bi-check-square-fill' if job['conclusion']=='success' else 'bi-x-square' }}"></span>
                         </a>
                         {% endfor%}
                     </td>
@@ -90,7 +90,7 @@
                         {% for job in latest_run_jobs if 'next' in job['name'] %}
                         <a href="{{ job['html_url'] }}" data-bs-toggle="tooltip" data-bs-title="{{ job['name'] }}"
                             class="link-underline-opacity-0 {{ 'link-success' if job['conclusion']=='success' else 'link-danger' }}">
-                            <i class="bi {{ 'bi-check-square-fill' if job['conclusion']=='success' else 'bi-x-square' }}"></i>
+                            <span class="bi {{ 'bi-check-square-fill' if job['conclusion']=='success' else 'bi-x-square' }}"></span>
                         </a>
                         {% endfor%}
                     </td>
@@ -98,7 +98,7 @@
                         {% for job in latest_run_jobs if 'ltm-2.4' in job['name'] %}
                         <a href="{{ job['html_url'] }}" data-bs-toggle="tooltip" data-bs-title="{{ job['name'] }}"
                             class="link-underline-opacity-0 {{ 'link-success' if job['conclusion']=='success' else 'link-danger' }}">
-                            <i class="bi {{ 'bi-check-square-fill' if job['conclusion']=='success' else 'bi-x-square' }}"></i>
+                            <span class="bi {{ 'bi-check-square-fill' if job['conclusion']=='success' else 'bi-x-square' }}"></span>
                         </a>
                         {% endfor%}
                     </td>
@@ -109,7 +109,7 @@
                         {% for run in upstream[meta['repo']]['runs'] %}
                         <a href="{{ run['html_url'] }}" data-bs-toggle="tooltip" data-bs-title="{{ run['updated_at'] }}"
                             class="link-underline-opacity-0 {{ 'link-success' if run['conclusion']=='success' else 'link-danger' }}">
-                            <i class="bi {{ 'bi-check-circle-fill' if run['conclusion']=='success' else 'bi-x-circle' }}"></i>
+                            <span class="bi {{ 'bi-check-circle-fill' if run['conclusion']=='success' else 'bi-x-circle' }}"></span>
                         </a>
                         {% endfor %}
                     </td>
