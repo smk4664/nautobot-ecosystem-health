@@ -60,9 +60,10 @@
         <table class="table table-sm table-hover">
             <thead>
                 <tr>
-                    <th>App Name <i class="bi bi-github"></i></th>
-                    <th>develop</i></th>
-                    <th>next</i></th>
+                    <th>App Name <span class="bi bi-github"></span></th>
+                    <th>develop</th>
+                    <th>next</th>
+                    <th>ltm-2.4</th>
                     <th><i class="bi bi-clock-history"></i></th>
                     <th>Workflow Run History (Last 30, Latest/Left to Oldest/Right)</th>
                 </tr>
@@ -87,6 +88,14 @@
                     </td>
                     <td>
                         {% for job in latest_run_jobs if 'next' in job['name'] %}
+                        <a href="{{ job['html_url'] }}" data-bs-toggle="tooltip" data-bs-title="{{ job['name'] }}"
+                            class="link-underline-opacity-0 {{ 'link-success' if job['conclusion']=='success' else 'link-danger' }}">
+                            <i class="bi {{ 'bi-check-square-fill' if job['conclusion']=='success' else 'bi-x-square' }}"></i>
+                        </a>
+                        {% endfor%}
+                    </td>
+                    <td>
+                        {% for job in latest_run_jobs if 'ltm-2.4' in job['name'] %}
                         <a href="{{ job['html_url'] }}" data-bs-toggle="tooltip" data-bs-title="{{ job['name'] }}"
                             class="link-underline-opacity-0 {{ 'link-success' if job['conclusion']=='success' else 'link-danger' }}">
                             <i class="bi {{ 'bi-check-square-fill' if job['conclusion']=='success' else 'bi-x-square' }}"></i>
